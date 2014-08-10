@@ -1,0 +1,19 @@
+JFLAGS = -g
+JC = javac
+.SUFFIXES: .java .class
+.java.class:
+      $(JC) $(JFLAGS) $*.java
+ 
+ 
+CLASSES = \
+       UserState.java \
+       servermodified.java \
+       Listenfor.java \
+       Typein.java \
+       Echoclient.java \
+
+default: classes
+ 
+classes: $(CLASSES:.java=.class)
+clean:
+      $(RM) *.class
